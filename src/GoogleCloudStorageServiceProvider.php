@@ -11,7 +11,7 @@ use Google\Cloud\Storage\StorageClient;
 use League\Flysystem\Cached\CachedAdapter;
 use Illuminate\Filesystem\FilesystemManager;
 use League\Flysystem\Cached\Storage\Memory as MemoryStore;
-use Superbalist\Flysystem\GoogleStorage\GoogleStorageAdapter;
+use Improwised\Flysystem\GoogleStorage\GoogleStorageAdapter as GoogleStorageGoogleStorageAdapter;
 
 class GoogleCloudStorageServiceProvider extends ServiceProvider
 {
@@ -70,7 +70,7 @@ class GoogleCloudStorageServiceProvider extends ServiceProvider
             $pathPrefix = Arr::get($config, 'path_prefix');
             $storageApiUri = Arr::get($config, 'storage_api_uri');
 
-            $adapter = new GoogleStorageAdapter($storageClient, $bucket, $pathPrefix, $storageApiUri);
+            $adapter = new GoogleStorageGoogleStorageAdapter($storageClient, $bucket, $pathPrefix, $storageApiUri);
 
             return $this->createFilesystem($adapter, $config);
         });
@@ -92,7 +92,7 @@ class GoogleCloudStorageServiceProvider extends ServiceProvider
             ]);
         }
 
-        if (! is_array($keyFile)) {
+        if (!is_array($keyFile)) {
             $keyFile = [];
         }
         return new StorageClient([
