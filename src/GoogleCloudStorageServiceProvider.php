@@ -9,7 +9,6 @@ use League\Flysystem\AdapterInterface;
 use Illuminate\Support\ServiceProvider;
 use Google\Cloud\Storage\StorageClient;
 use League\Flysystem\Cached\CachedAdapter;
-use Illuminate\Filesystem\FilesystemManager;
 use League\Flysystem\Cached\Storage\Memory as MemoryStore;
 use Improwised\Flysystem\GoogleStorage\GoogleStorageAdapter as GoogleStorageGoogleStorageAdapter;
 

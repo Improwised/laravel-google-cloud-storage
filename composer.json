@@ -18,7 +18,7 @@
   "repositories": [],
   "autoload": {
     "psr-4": {
-      "Improwised\\LaravelGoogleCloudStorage\\": "src/"
+      "Superbalist\\LaravelGoogleCloudStorage\\": "src/"
     }
   },
   "extra": {
