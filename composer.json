@@ -9,11 +9,11 @@
     }
   ],
   "require": {
-    "php": ">=5.5.9",
+    "php": "^8.0",
     "illuminate/support": "^5.1|^6.0|^7.0|^8.0|^9.0",
     "illuminate/filesystem": "^5.1|^6.0|^7.0|^8.0|^9.0",
     "nazalas/flysystem-cached-adapter": "9.0",
-    "improwised/flysystem-google-storage": "^7.2"
+    "improwised/flysystem-google-storage": "7.2.5"
   },
   "repositories": [],
   "autoload": {
