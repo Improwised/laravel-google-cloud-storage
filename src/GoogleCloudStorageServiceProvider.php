@@ -6,6 +6,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Filesystem\Cache;
 use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemAdapter;
+use Illuminate\Filesystem\FilesystemAdapter as IlluminateFilesystemAdapter;
 use Illuminate\Support\ServiceProvider;
 use Google\Cloud\Storage\StorageClient;
 use League\Flysystem\Cached\CachedAdapter;
@@ -30,7 +31,7 @@ class GoogleCloudStorageServiceProvider extends ServiceProvider
         if ($cache) {
             $adapter = new CachedAdapter($adapter, $this->createCacheStore($cache));
         }
-        return new FilesystemAdapter(
+        return new IlluminateFilesystemAdapter(
             new Filesystem($adapter, count($config) > 0 ? $config : [], null, null, null),
             $adapter,
             $config
