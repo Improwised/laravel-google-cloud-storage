@@ -30,8 +30,11 @@ class GoogleCloudStorageServiceProvider extends ServiceProvider
         if ($cache) {
             $adapter = new CachedAdapter($adapter, $this->createCacheStore($cache));
         }
-
-        return new Filesystem($adapter, count($config) > 0 ? $config : [], null, null, null);
+        return new FilesystemAdapter(
+            new Filesystem($adapter, count($config) > 0 ? $config : [], null, null, null),
+            $adapter,
+            $config
+        );
     }
 
     /**
